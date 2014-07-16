@@ -10,5 +10,5 @@ import retrofit.http.GET;
 public interface OffersAPI {
 
     @GET("/mobile-api/v1/offers.json?page_size=10&page=1")
-    void offerList(Callback<Response> callback);
+    void getOffers(Callback<Response> callback);
 }
