@@ -42,7 +42,6 @@ public class OfferListAdapter extends ArrayAdapter<Offer> {
         }
 
         holder.title.setText(offer.getTitle());
-        holder.description.setText(offer.getDescription());
         holder.date_range.setText("Valid: " + offer.getEarliestRedemptionDate()
                 + " - " + offer.getVoucherExpiry());
         holder.offersRemaining.setText("Offers Remaining: " + offer.getAvailableCount());
@@ -56,14 +55,12 @@ public class OfferListAdapter extends ArrayAdapter<Offer> {
 
     static class ViewHolder{
         private TextView title;
-        private TextView description;
         private TextView date_range;
         private TextView offersRemaining;
         private ImageView offerImage;
 
         public ViewHolder(View row) {
             title = (TextView)row.findViewById(R.id.title);
-            description = (TextView)row.findViewById(R.id.description);
             date_range = (TextView)row.findViewById(R.id.valid_date_range);
             offersRemaining = (TextView)row.findViewById(R.id.remaining_offers);
             offerImage = (ImageView)row.findViewById(R.id.offer_image);

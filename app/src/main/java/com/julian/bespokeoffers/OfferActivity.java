@@ -3,6 +3,8 @@ package com.julian.bespokeoffers;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ public class OfferActivity extends Activity implements Callback<OfferResponse> {
 
     ListView offerListView;
     OfferListAdapter offerAdapter;
+    public static final String OFFER = "offer";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,14 @@ public class OfferActivity extends Activity implements Callback<OfferResponse> {
         setContentView(R.layout.activity_offers);
 
         offerListView = (ListView)findViewById(R.id.offer_lv);
+        offerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Offer selectedOffer = (Offer)parent.getItemAtPosition(position);
+                OfferDetailFragment.newInstance(selectedOffer)
+                        .show(getFragmentManager(), OFFER);
+            }
+        });
 
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint("https://www.bespokeoffers.co.uk")
