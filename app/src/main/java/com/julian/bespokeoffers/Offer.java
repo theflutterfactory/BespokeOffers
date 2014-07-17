@@ -5,7 +5,7 @@ package com.julian.bespokeoffers;
  */
 import android.os.Parcel;
 import android.os.Parcelable;
-
+import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
@@ -329,7 +329,11 @@ public class Offer implements Parcelable{
         destination.writeByte((byte) (trending ? 1 : 0));
         destination.writeByte((byte) (saved ? 1 : 0));
         destination.writeString(price);
-        destination.writeByte((byte) (collectConsumerDeliveryDetails ? 1 : 0));
+        try{
+            destination.writeByte((byte) (collectConsumerDeliveryDetails ? 1 : 0));
+        } catch(NullPointerException e){
+            Log.d("Offer", "collectConsumerDeliveryDetails is null");
+        }
     }
 
     private void readFromParcel(Parcel in) {
