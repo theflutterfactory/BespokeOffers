@@ -17,17 +17,17 @@ import com.squareup.picasso.Picasso;
  */
 public class OfferDetailFragment extends DialogFragment {
 
-    Offer currentOffer;
-    ImageView offerImage;
-    TextView title;
-    TextView description;
-    TextView validDateRange;
-    TextView discount;
-    ImageView merchantLogo;
-    TextView merchantName;
-    TextView merchantPhoneNumber;
-    TextView merchantEmail;
-    TextView howToUse;
+    private Offer currentOffer;
+    private ImageView offerImage;
+    private TextView title;
+    private TextView description;
+    private TextView validDateRange;
+    private TextView discount;
+    private ImageView merchantLogo;
+    private TextView merchantName;
+    private TextView merchantPhoneNumber;
+    private TextView merchantEmail;
+    private TextView howToUse;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

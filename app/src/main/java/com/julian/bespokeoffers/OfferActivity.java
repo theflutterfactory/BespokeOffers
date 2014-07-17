@@ -2,17 +2,10 @@ package com.julian.bespokeoffers;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -22,8 +15,8 @@ import retrofit.client.Response;
 
 public class OfferActivity extends Activity implements Callback<OfferResponse> {
 
-    ListView offerListView;
-    OfferListAdapter offerAdapter;
+    private ListView offerListView;
+    private OfferListAdapter offerAdapter;
     public static final String OFFER = "offer";
 
     @Override
