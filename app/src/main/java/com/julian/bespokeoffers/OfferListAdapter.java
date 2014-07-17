@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by juliancurrie on 7/15/14.
@@ -16,9 +17,9 @@ import java.util.ArrayList;
 public class OfferListAdapter extends ArrayAdapter<Offer> {
     int resource;
     Context context;
-    ArrayList<Offer> offerList;
+    List<Offer> offerList;
 
-    public OfferListAdapter(Context context, int resource, ArrayList<Offer> offerArrayList) {
+    public OfferListAdapter(Context context, int resource, List<Offer> offerArrayList) {
         super(context, resource, offerArrayList);
         this.resource = resource;
         this.context = context;
@@ -32,7 +33,7 @@ public class OfferListAdapter extends ArrayAdapter<Offer> {
         Offer offer = offerList.get(position);
 
         if (convertView == null ) {
-            convertView = LayoutInflater.from(context).inflate(resource, parent, true);
+            convertView = LayoutInflater.from(context).inflate(resource, parent, false);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else{
