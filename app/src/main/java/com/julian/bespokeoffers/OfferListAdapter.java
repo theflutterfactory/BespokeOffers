@@ -8,7 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 /**
@@ -45,6 +46,11 @@ public class OfferListAdapter extends ArrayAdapter<Offer> {
         holder.date_range.setText("Valid: " + offer.getEarliestRedemptionDate()
                 + " - " + offer.getVoucherExpiry());
         holder.offersRemaining.setText("Offers Remaining: " + offer.getAvailableCount());
+
+        Picasso.with(context).load(offer.getImage())
+                .resize(300, 300)
+                .placeholder(R.drawable.ic_launcher)
+                .into(holder.offerImage);
 
         return convertView;
     }
