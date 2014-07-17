@@ -1,7 +1,6 @@
 package com.julian.bespokeoffers;
 
 import retrofit.Callback;
-import retrofit.client.Response;
 import retrofit.http.GET;
 
 /**
@@ -10,5 +9,5 @@ import retrofit.http.GET;
 public interface OffersAPI {
 
     @GET("/mobile-api/v1/offers.json?page_size=10&page=1")
-    void getOffers(Callback<Response> callback);
+    void getOffers(Callback<OfferResponse> callback);
 }
