@@ -48,7 +48,6 @@ public class OfferListAdapter extends ArrayAdapter<Offer> {
         holder.offersRemaining.setText("Offers Remaining: " + offer.getAvailableCount());
 
         Picasso.with(context).load(offer.getImage())
-                .resize(300, 300)
                 .placeholder(R.drawable.ic_launcher)
                 .into(holder.offerImage);
 
