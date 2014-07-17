@@ -16,9 +16,9 @@ import java.util.List;
  * Created by juliancurrie on 7/15/14.
  */
 public class OfferListAdapter extends ArrayAdapter<Offer> {
-    int resource;
-    Context context;
-    List<Offer> offerList;
+    private final int resource;
+    private final  Context context;
+    private final List<Offer> offerList;
 
     public OfferListAdapter(Context context, int resource, List<Offer> offerArrayList) {
         super(context, resource, offerArrayList);
@@ -54,10 +54,10 @@ public class OfferListAdapter extends ArrayAdapter<Offer> {
     }
 
     static class ViewHolder{
-        private TextView title;
-        private TextView date_range;
-        private TextView offersRemaining;
-        private ImageView offerImage;
+        private final TextView title;
+        private final TextView date_range;
+        private final TextView offersRemaining;
+        private final ImageView offerImage;
 
         public ViewHolder(View row) {
             title = (TextView)row.findViewById(R.id.title);
