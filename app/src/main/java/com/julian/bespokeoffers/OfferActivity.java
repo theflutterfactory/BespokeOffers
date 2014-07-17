@@ -20,7 +20,6 @@ import retrofit.client.Response;
 
 public class OfferActivity extends Activity implements Callback<OfferResponse> {
 
-    ArrayList<Offer> offerList;
     ListView offerListView;
     OfferListAdapter offerAdapter;
 
@@ -30,10 +29,6 @@ public class OfferActivity extends Activity implements Callback<OfferResponse> {
         setContentView(R.layout.activity_offers);
 
         offerListView = (ListView)findViewById(R.id.offer_lv);
-
-        offerList = new ArrayList<Offer>();
-        offerAdapter = new OfferListAdapter(this, R.layout.offer_list_item, offerList);
-        offerListView.setAdapter(offerAdapter);
 
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint("https://www.bespokeoffers.co.uk")
@@ -45,6 +40,8 @@ public class OfferActivity extends Activity implements Callback<OfferResponse> {
 
     @Override
     public void success(OfferResponse offerResponse, Response apiResponse) {
+        offerAdapter = new OfferListAdapter(this, R.layout.offer_list_item, offerResponse.getOffers());
+        offerListView.setAdapter(offerAdapter);
     }
 
     @Override
