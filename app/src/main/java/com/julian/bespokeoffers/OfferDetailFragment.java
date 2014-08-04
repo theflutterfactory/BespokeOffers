@@ -35,7 +35,7 @@ public class OfferDetailFragment extends DialogFragment {
 
         Bundle args = getArguments();
         if (args != null) {
-            currentOffer = args.getParcelable(OfferActivity.OFFER);
+            currentOffer = args.getParcelable(OfferListFragment.OFFER);
         }
     }
 
@@ -110,7 +110,7 @@ public class OfferDetailFragment extends DialogFragment {
     public static OfferDetailFragment newInstance(Offer offer) {
         OfferDetailFragment frag = new OfferDetailFragment();
         Bundle b = new Bundle(1);
-        b.putParcelable(OfferActivity.OFFER, offer);
+        b.putParcelable(OfferListFragment.OFFER, offer);
         frag.setArguments(b);
         return frag;
     }

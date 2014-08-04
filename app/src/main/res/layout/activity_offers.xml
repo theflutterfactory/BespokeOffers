@@ -8,9 +8,11 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".Offers">
 
-    <ListView
-        android:id="@+id/offer_lv"
+    <fragment
+        android:id="@+id/listFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:attr/actionBarSize"
+        android:name="com.julian.bespokeoffers.OfferListFragment" />
 
 </RelativeLayout>
